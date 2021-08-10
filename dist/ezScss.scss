@@ -1,0 +1,44 @@
+/*
+    ~~~~~~~~ DISPLAY RELATED SCSS MIXINS ~~~~~~~~
+*/
+
+@mixin setSize($width: auto, $height: auto){
+    width: #{$width};
+    height: #{$height};
+}
+
+@mixin setPos($top: auto, $left: auto, $bottom: auto, $right: auto){
+    top: #{$top};
+    left: #{$left};
+    bottom: #{$bottom};
+    right: #{$right};
+}
+
+@mixin setDisplay($display: inline, $pos: unset, $top: auto, $left: auto){
+    display: #{$display};
+    position: #{$pos};
+    @include setPosition($top, $left);
+}
+
+@mixin setFlex($justifyC: normal, $alignI: normal, $alignC: normal, $flexDir: row, $flexWrap: nowrap){
+    display: flex;
+    flex-direction: #{$flexDir};
+    flex-wrap: #{$flexWrap};
+    justify-content: #{$justifyC};
+    align-items:#{$alignI};
+    align-content:#{$alignC};
+}
+
+@mixin absoluteCenter(){
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin onHoverBoxShadow($duration, $LRsides, $TBsides, $all, $blur){
+    transition: box-shadow #{$duration};
+    &:hover {
+        box-shadow: #{$LRsides} #{$TBsides} #{$all} #{$blur} var(--shadow);
+    }
+}
