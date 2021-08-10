@@ -1,23 +1,26 @@
-/*
-    ~~~~~~~~ DISPLAY RELATED SCSS MIXINS ~~~~~~~~
-*/
+/*     ~~~~~~~~ DISPLAY RELATED SCSS MIXINS ~~~~~~~~     */
 
 @mixin setSize($width: auto, $height: auto){
     width: #{$width};
     height: #{$height};
 }
 
-@mixin setPos($top: auto, $left: auto, $bottom: auto, $right: auto){
+@mixin setMarginPadding($margin: auto, $padding: auto){
+    margin:#{$margin};
+    padding:#{$padding};
+}
+
+@mixin setPos($position: static, $top: auto, $left: auto, $bottom: auto, $right: auto){
+    position: #{$position};
     top: #{$top};
     left: #{$left};
     bottom: #{$bottom};
     right: #{$right};
 }
 
-@mixin setDisplay($display: inline, $pos: unset, $top: auto, $left: auto){
+@mixin setDisplay($display: inline, $position: static, $top: auto, $left: auto){
     display: #{$display};
-    position: #{$pos};
-    @include setPosition($top, $left);
+    @include setPosition($position, $top, $left);
 }
 
 @mixin setFlex($justifyC: normal, $alignI: normal, $alignC: normal, $flexDir: row, $flexWrap: nowrap){
