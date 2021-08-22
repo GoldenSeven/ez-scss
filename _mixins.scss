@@ -39,9 +39,9 @@
     transform: translate(-50%, -50%);
 }
 
-@mixin onHoverBoxShadow($duration: 1s, $LRsides: 0px, $TBsides: -5px, $all: 0px, $blur: 3px){
+@mixin onHoverBoxShadow($duration: 1s, $LRsides: 0px, $TBsides: -5px, $all: 0px, $blur: 3px, $color: rgb(0, 0, 0, 0.5)){
     transition: box-shadow #{$duration};
     &:hover {
-        box-shadow: #{$LRsides} #{$TBsides} #{$all} #{$blur} var(--shadow);
+        box-shadow: #{$LRsides} #{$TBsides} #{$all} #{$blur} #{$color};
     }
 }

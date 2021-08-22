@@ -7,7 +7,7 @@ All you have to do is import the Scss file:
 
 ```scss
 @charset "utf-8";
-@import "DIR_OF_PROJECT/node_modules/ez-scss/mixins"; 
+@import "DIR_OF_PROJECT/node_modules/ez-scss/mixins";
 
 // rest of your code...
 ```
@@ -17,20 +17,20 @@ Then include the mixins where ever you like!
 ```scss
 // BEFORE
 div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    flex-direction: column;
-    flex-wrap: wrap;
-    width: 100vw;
-    height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100vw;
+  height: 100vh;
 }
 
 // AFTER
 div {
-    @include setFlex(center, center, center, column, wrap);
-    @include setSize(100vw, 100vh);
+  @include setFlex(center, center, center, column, wrap);
+  @include setSize(100vw, 100vh);
 }
 ```
 
@@ -41,29 +41,29 @@ I highly recommend installing a SCSS Intellisense library such as [SCSS Intellis
 ## Mixins
 
 ```scss
-@include setSize(auto, auto) //$width, $height
+@include setSize(auto, auto); //$width, $height
 ```
 
 ```scss
-@include setMarginPadding(auto, auto) // $margin, $padding
+@include setMarginPadding(auto, auto); // $margin, $padding
 ```
 
 ```scss
-@include setPos(static,auto,auto,auto,auto) // $position, $top, $left, $bottom, $right
+@include setPos( static, auto, auto, auto, auto); // $position, $top, $left, $bottom, $right
 ```
 
 ```scss
-@include setDisplay(inline, static, auto, auto) // $display, $position, $top, $left
+@include setDisplay(inline,static,auto,auto); // $display, $position, $top, $left
 ```
 
 ```scss
-@include setFlex(normal, normal, normal, row, nowrap) // $justifyC, $alignI, $alignC, $flexDir, $flexWrap
+@include setFlex(normal, normal, normal, row, nowrap); // $justifyC, $alignI, $alignC, $flexDir, $flexWrap
 ```
 
 ```scss
-@include absoluteCenter() // Just absoultely centers object old fashion way ;)
+@include absoluteCenter(); // Just absoultely centers object old fashion way ;)
 ```
 
 ```scss
-@include onHoverBoxShadow(1s, 0px, -5px, 0px, 3px) // $duration, $LRsides, $TBsides, $all, $blur
+@include onHoverBoxShadow(1s, 0px, -5px, 0px, 3px, rgb(0, 0, 0, 0.5)); // $duration, $LRsides, $TBsides, $all, $blur
 ```
