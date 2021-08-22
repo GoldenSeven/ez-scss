@@ -1,4 +1,4 @@
-This is a library of mixin functions for [Scss](https://sass-lang.com/) to help minimise code and increase the readability of stylesheets.
+This is a library of mixin functions for [Scss](https://sass-lang.com/guide) to help minimise code and increase the readability of stylesheets.
 Created by Daniel Scott, founder of [Daniels Designs](https://danielsdesigns.tech/).
 
 ## Getting Started
@@ -7,7 +7,7 @@ All you have to do is import the Scss file:
 
 ```scss
 @charset "utf-8";
-@import "../node_modules/ez-scss/mixins"; 
+@import "DIR_OF_PROJECT/node_modules/ez-scss/mixins"; 
 
 // rest of your code...
 ```
@@ -37,3 +37,33 @@ div {
 ## Helpful Notes
 
 I highly recommend installing a SCSS Intellisense library such as [SCSS Intellisense](https://marketplace.visualstudio.com/items?itemName=mrmlnc.vscode-scss) by mrmlnc for VScode. This will show you a popup of parameter names as you type mixins in from the documentation.
+
+## Mixins
+
+```scss
+@include setSize(auto, auto) //$width, $height
+```
+
+```scss
+@include setMarginPadding(auto, auto) // $margin, $padding
+```
+
+```scss
+@include setPos(static,auto,auto,auto,auto) // $position, $top, $left, $bottom, $right
+```
+
+```scss
+@include setDisplay(inline, static, auto, auto) // $display, $position, $top, $left
+```
+
+```scss
+@include setFlex(normal, normal, normal, row, nowrap) // $justifyC, $alignI, $alignC, $flexDir, $flexWrap
+```
+
+```scss
+@include absoluteCenter() // Just absoultely centers object old fashion way ;)
+```
+
+```scss
+@include onHoverBoxShadow(1s, 0px, -5px, 0px, 3px) // $duration, $LRsides, $TBsides, $all, $blur
+```
