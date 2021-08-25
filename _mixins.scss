@@ -10,7 +10,7 @@
     padding:#{$padding};
 }
 
-@mixin setPos($position: static, $top: auto, $left: auto, $bottom: auto, $right: auto){
+@mixin setPosition($position: static, $top: auto, $left: auto, $bottom: auto, $right: auto){
     position: #{$position};
     top: #{$top};
     left: #{$left};
@@ -44,4 +44,32 @@
     &:hover {
         box-shadow: #{$LRsides} #{$TBsides} #{$all} #{$blur} #{$color};
     }
+}
+
+// Disables all select of text/images on all devices
+@mixin disableSelect() {
+    user-select: none; /* supported by Chrome and Opera */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+/// Encodes a SVG data URL so IE doesn't choke (via codepen.io/jakob-e/pen/YXXBrp).
+/// @param {string} $svg SVG data URL.
+/// @return {string} Encoded SVG data URL.
+@function svg-url($svg) {
+
+	$svg: str-replace($svg, '"', '\'');
+	$svg: str-replace($svg, '%', '%25');
+	$svg: str-replace($svg, '<', '%3C');
+	$svg: str-replace($svg, '>', '%3E');
+	$svg: str-replace($svg, '&', '%26');
+	$svg: str-replace($svg, '#', '%23');
+	$svg: str-replace($svg, '{', '%7B');
+	$svg: str-replace($svg, '}', '%7D');
+	$svg: str-replace($svg, ';', '%3B');
+
+	@return url("data:image/svg+xml;charset=utf8,#{$svg}");
+
 }
