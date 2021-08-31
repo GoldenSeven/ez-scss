@@ -1,16 +1,16 @@
 /*     ~~~~~~~~ DISPLAY RELATED SCSS MIXINS ~~~~~~~~     */
 
-@mixin setSize($width: auto, $height: auto){
+@mixin setSize($width: auto, $height: auto) {
     width: #{$width};
     height: #{$height};
 }
 
-@mixin setMarginPadding($margin: auto, $padding: auto){
-    margin:#{$margin};
-    padding:#{$padding};
+@mixin setMarginPadding($margin: auto, $padding: auto) {
+    margin: #{$margin};
+    padding: #{$padding};
 }
 
-@mixin setPosition($position: static, $top: auto, $left: auto, $bottom: auto, $right: auto){
+@mixin setPosition($position: static, $top: auto, $left: auto, $bottom: auto, $right: auto) {
     position: #{$position};
     top: #{$top};
     left: #{$left};
@@ -18,28 +18,35 @@
     right: #{$right};
 }
 
-@mixin setDisplay($display: inline, $position: static, $top: auto, $left: auto){
+@mixin setDisplay($display: inline, $position: static, $top: auto, $left: auto) {
     display: #{$display};
     @include setPosition($position, $top, $left);
 }
 
-@mixin setFlex($justifyC: normal, $alignI: normal, $alignC: normal, $flexDir: row, $flexWrap: nowrap){
+@mixin setFlex($justifyC: normal, $alignI: normal, $alignC: normal, $flexDir: row, $flexWrap: nowrap) {
     display: flex;
     flex-direction: #{$flexDir};
     flex-wrap: #{$flexWrap};
     justify-content: #{$justifyC};
-    align-items:#{$alignI};
-    align-content:#{$alignC};
+    align-items: #{$alignI};
+    align-content: #{$alignC};
 }
 
-@mixin absoluteCenter(){
+@mixin absoluteCenter() {
     position: absolute;
-    top:50%;
-    left:50%;
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
 }
 
-@mixin onHoverBoxShadow($duration: 1s, $LRsides: 0px, $TBsides: -5px, $all: 0px, $blur: 3px, $color: rgb(0, 0, 0, 0.5)){
+@mixin onHoverBoxShadow(
+    $duration: 1s,
+    $LRsides: 0px,
+    $TBsides: -5px,
+    $all: 0px,
+    $blur: 3px,
+    $color: rgb(0, 0, 0, 0.5)
+) {
     transition: box-shadow #{$duration};
     &:hover {
         box-shadow: #{$LRsides} #{$TBsides} #{$all} #{$blur} #{$color};
@@ -59,17 +66,15 @@
 /// @param {string} $svg SVG data URL.
 /// @return {string} Encoded SVG data URL.
 @function svg-url($svg) {
+    $svg: str-replace($svg, '"', "'");
+    $svg: str-replace($svg, "%", "%25");
+    $svg: str-replace($svg, "<", "%3C");
+    $svg: str-replace($svg, ">", "%3E");
+    $svg: str-replace($svg, "&", "%26");
+    $svg: str-replace($svg, "#", "%23");
+    $svg: str-replace($svg, "{", "%7B");
+    $svg: str-replace($svg, "}", "%7D");
+    $svg: str-replace($svg, ";", "%3B");
 
-	$svg: str-replace($svg, '"', '\'');
-	$svg: str-replace($svg, '%', '%25');
-	$svg: str-replace($svg, '<', '%3C');
-	$svg: str-replace($svg, '>', '%3E');
-	$svg: str-replace($svg, '&', '%26');
-	$svg: str-replace($svg, '#', '%23');
-	$svg: str-replace($svg, '{', '%7B');
-	$svg: str-replace($svg, '}', '%7D');
-	$svg: str-replace($svg, ';', '%3B');
-
-	@return url("data:image/svg+xml;charset=utf8,#{$svg}");
-
+    @return url("data:image/svg+xml;charset=utf8,#{$svg}");
 }

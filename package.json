@@ -1,6 +1,6 @@
 {
   "name": "ez-scss",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "A library of Scss mixin functions to help aid minimalistic stylesheet development.",
   "main": "dist/ezScss.scss",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/GoldenSeven/ezScss"
+    "url": "https://github.com/GoldenSeven/ez-scss"
   },
   "keywords": [
     "ez"
@@ -16,7 +16,7 @@
   "author": "Daniel Scott",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/GoldenSeven/ezScss/issues"
+    "url": "https://github.com/GoldenSeven/ez-scss/issues"
   },
-  "homepage": "https://github.com/GoldenSeven/ezScss#readme"
+  "homepage": "https://github.com/GoldenSeven/ez-scss#readme"
 }

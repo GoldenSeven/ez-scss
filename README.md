@@ -41,6 +41,7 @@ I highly recommend installing a SCSS Intellisense library such as [SCSS Intellis
 ## Mixins
 
 ```scss
+
 @include setSize(auto, auto); //$width, $height
 ```
 
@@ -49,7 +50,7 @@ I highly recommend installing a SCSS Intellisense library such as [SCSS Intellis
 ```
 
 ```scss
-@include setPos( static, auto, auto, auto, auto); // $position, $top, $left, $bottom, $right
+@include setPosition( static, auto, auto, auto, auto); // $position, $top, $left, $bottom, $right
 ```
 
 ```scss
@@ -61,7 +62,13 @@ I highly recommend installing a SCSS Intellisense library such as [SCSS Intellis
 ```
 
 ```scss
-@include absoluteCenter(); // Just absoultely centers object old fashion way ;)
+// Absoultely centers selector the old fashion way, the ol block/transform ;)
+@include absoluteCenter();
+```
+
+```scss
+// Disables ability to select (highlight with mouse drag) text or image on element
+@include disableSelect();
 ```
 
 ```scss
