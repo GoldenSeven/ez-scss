@@ -1,6 +1,6 @@
 {
   "name": "ez-scss",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A library of Scss mixin functions to help aid minimalistic stylesheet development.",
   "main": "all.scss",
   "scripts": {

@@ -6,50 +6,44 @@ $laptop: 1024px;
 $laptop-l: 1440px;
 $four-k: 2560px;
 
-@mixin mediaMaxWidth($resoultion) {
-  @media (max-width: $resolution) {
-    @content;
-  }
-}
-
 @mixin mobile-s() {
-  @include mediaMaxWidth($mobile-s) {
+  @media (max-width: $mobile-s) {
     @content;
   }
 }
 
 @mixin mobile-m() {
-  @include mediaMaxWidth($mobile-m) {
+  @media (max-width: $mobile-m) {
     @content;
   }
 }
 
 @mixin mobile-l() {
-  @include mediaMaxWidth($mobile-l) {
+  @media (max-width: $mobile-l) {
     @content;
   }
 }
 
 @mixin tablet() {
-  @include mediaMaxWidth($tablet) {
+  @media (max-width: $tablet) {
     @content;
   }
 }
 
 @mixin laptop() {
-  @include mediaMaxWidth($laptop) {
+  @media (max-width: $laptop) {
     @content;
   }
 }
 
 @mixin laptop-l() {
-  @include mediaMaxWidth($laptop-l) {
+  @media (max-width: $laptop-l) {
     @content;
   }
 }
 
 @mixin four-k() {
-  @include mediaMaxWidth($four-k) {
+  @media (max-width: $four-k) {
     @content;
   }
 }
