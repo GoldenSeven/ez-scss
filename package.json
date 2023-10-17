@@ -1,22 +1,27 @@
 {
   "name": "ez-scss",
-  "version": "1.0.8",
-  "description": "A library of Scss mixin functions to help aid minimalistic stylesheet development.",
+  "version": "1.0.9",
+  "description": "🎨 Helpful Sass/Scss mixins to make styling you web apps easier.",
   "main": "all.scss",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/DanielsDesigns-au/ez-scss"
+    "url": "https://github.com/life-of-dan/ez-scss"
   },
   "keywords": [
-    "ez"
+    "ez-scss",
+    "ez",
+    "sass",
+    "scss",
+    "mixin",
+    "responsive"
   ],
   "author": "Daniel Scott",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/DanielsDesigns-au/ez-scss/issues"
+    "url": "https://github.com/life-of-dan/ez-scss/issues"
   },
-  "homepage": "https://github.com/DanielsDesigns-au/ez-scss#readme"
+  "homepage": "https://github.com/life-of-dan/ez-scss#readme"
 }
